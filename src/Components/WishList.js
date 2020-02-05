@@ -1,5 +1,8 @@
 import React from "react";
 import Paper from "@material-ui/core/Paper";
+import AppBar from "@material-ui/core/AppBar";
+import Toolbar from "@material-ui/core/Toolbar";
+import Typography from "@material-ui/core/Typography";
 
 export default function WishList() {
   return (
@@ -14,6 +17,12 @@ export default function WishList() {
       elevation={0}
     >
       {/* use Paper Component as a reusable container to provide us with a background color */}
+      <AppBar color="primary" position="static" style={{ height: "64px" }}>
+        {/* AppBar, Toolbar, and Typography Components are from the material-ui docs */}
+        <Toolbar>
+          <Typography color="inherit">Wishes</Typography>
+        </Toolbar>
+      </AppBar>
     </Paper>
   );
 }
