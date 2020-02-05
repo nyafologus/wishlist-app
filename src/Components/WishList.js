@@ -56,6 +56,11 @@ export default function WishList() {
           <Typography color="inherit">Wishes</Typography>
         </Toolbar>
       </AppBar>
+      <ul wishes={wishes}>
+        {wishes.map(wish => (
+          <li key={wish.id}>{wish.content}</li>
+        ))}
+      </ul>
     </Paper>
   );
 }
