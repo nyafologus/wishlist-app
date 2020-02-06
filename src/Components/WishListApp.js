@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import List from "./List";
+import WishList from "./List";
 import AppBar from "@material-ui/core/AppBar";
 import Paper from "@material-ui/core/Paper";
 import Toolbar from "@material-ui/core/Toolbar";
@@ -57,7 +57,7 @@ export default function WishListApp() {
           <Typography color="inherit">Wishes</Typography>
         </Toolbar>
       </AppBar>
-      <List wishes={wishes} />
+      <WishList wishes={wishes} />
     </Paper>
   );
 }

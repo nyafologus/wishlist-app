@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function List({ wishes }) {
+export default function WishList({ wishes }) {
   return (
     <div>
       {wishes.map(wish => (
