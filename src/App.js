@@ -1,9 +1,9 @@
 import React from "react";
-import WishList from "./Components/WishList";
+import WishListApp from "./Components/WishList";
 import "./App.css";
 
 function App() {
-  return <WishList />;
+  return <WishListApp />;
 }
 
 export default App;
