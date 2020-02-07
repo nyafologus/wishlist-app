@@ -69,7 +69,7 @@ export default function WishListApp() {
           <Typography color="inherit">Wishes</Typography>
         </Toolbar>
       </AppBar>
-      <WishForm />
+      <WishForm addWish={addWish} />
       <WishList wishes={wishes} />
     </Paper>
   );
