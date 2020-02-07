@@ -39,6 +39,17 @@ export default function WishListApp() {
   ];
 
   const [wishes, setWishes] = useState(initialWishes);
+  const addWish = newWishText => {
+    setWishes([
+      ...wishes,
+      {
+        id: 5,
+        content: newWishText,
+        done: false,
+        link: ""
+      }
+    ]);
+  };
 
   return (
     <Paper
