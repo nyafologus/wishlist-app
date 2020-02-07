@@ -5,7 +5,7 @@ import TextField from "@material-ui/core/TextField";
 import useInputState from "../hooks/useInputState";
 
 export default function WishForm() {
-  const [value, handleChange] = useInputState("");
+  const [value, handleChange, reset] = useInputState("");
 
   return (
     <Paper>
