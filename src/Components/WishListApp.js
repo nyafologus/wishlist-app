@@ -5,6 +5,7 @@ import AppBar from "@material-ui/core/AppBar";
 import Paper from "@material-ui/core/Paper";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
+import Grid from "@material-ui/core/Grid";
 
 export default function WishListApp() {
   const initialWishes = [
@@ -69,8 +70,12 @@ export default function WishListApp() {
           <Typography color="inherit">Wishes</Typography>
         </Toolbar>
       </AppBar>
-      <WishForm addWish={addWish} />
-      <WishList wishes={wishes} />
+      <Grid container justify="center">
+        <Grid item xs={11} md={9} lg={5}>
+          <WishForm addWish={addWish} />
+          <WishList wishes={wishes} />
+        </Grid>
+      </Grid>
     </Paper>
   );
 }
