@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import WishForm from "./WishForm";
 import WishList from "./WishList";
 import AppBar from "@material-ui/core/AppBar";
 import Paper from "@material-ui/core/Paper";
@@ -57,6 +58,7 @@ export default function WishListApp() {
           <Typography color="inherit">Wishes</Typography>
         </Toolbar>
       </AppBar>
+      <WishForm />
       <WishList wishes={wishes} />
     </Paper>
   );
