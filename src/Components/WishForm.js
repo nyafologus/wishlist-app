@@ -5,11 +5,11 @@ import TextField from "@material-ui/core/TextField";
 import useInputState from "../hooks/useInputState";
 
 export default function WishForm() {
-  const value = useInputState("");
+  const [value, handleChange] = useInputState("");
 
   return (
     <Paper>
-      <TextField value={value} />
+      <TextField value={value} onChange={handleChange} />
     </Paper>
   );
 }
