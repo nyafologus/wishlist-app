@@ -1,4 +1,5 @@
 import React from "react";
+import Wish from "./Wish";
 import Paper from "@material-ui/core/Paper";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
@@ -12,7 +13,9 @@ export default function WishList({ wishes }) {
         {wishes.map(wish => (
           <>
             <ListItem key={wish.id}>
-              <ListItemText>{wish.content}</ListItemText>
+              <ListItemText>
+                <Wish />
+              </ListItemText>
             </ListItem>
             <Divider />
           </>
