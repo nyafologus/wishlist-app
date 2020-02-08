@@ -12,9 +12,9 @@ export default function WishList({ wishes }) {
       <List>
         {wishes.map(wish => (
           <>
-            <ListItem key={wish.id}>
+            <ListItem>
               <ListItemText>
-                <Wish />
+                <Wish content={wish.content} key={wish.id} done={wish.done} />
               </ListItemText>
             </ListItem>
             <Divider />
