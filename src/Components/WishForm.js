@@ -21,6 +21,7 @@ export default function WishForm({ addWish }) {
           onChange={handleChange}
           margin="normal"
           label="What do you wish for?"
+          fullWidth
         />
       </form>
     </Paper>
