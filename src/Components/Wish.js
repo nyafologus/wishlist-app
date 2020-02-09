@@ -27,10 +27,10 @@ export default function Wish({ content, done }) {
       </FormGroup>
       <ListItemText>{content}</ListItemText>
       <ListItemSecondaryAction>
-        <IconButton>
+        <IconButton aria-label="edit">
           <EditIcon />
         </IconButton>
-        <IconButton>
+        <IconButton aria-label="delete">
           <DeleteIcon />
         </IconButton>
       </ListItemSecondaryAction>
