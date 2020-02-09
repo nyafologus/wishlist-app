@@ -4,7 +4,7 @@ import Paper from "@material-ui/core/Paper";
 import List from "@material-ui/core/List";
 import Divider from "@material-ui/core/Divider";
 
-export default function WishList({ wishes, deleteWish }) {
+export default function WishList({ wishes, toggleWish, deleteWish }) {
   return (
     <Paper>
       <List>
@@ -14,6 +14,7 @@ export default function WishList({ wishes, deleteWish }) {
               id={wish.id}
               content={wish.content}
               done={wish.done}
+              toggleWish={toggleWish}
               deleteWish={deleteWish}
             />
             <Divider />

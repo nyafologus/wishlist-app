@@ -11,7 +11,7 @@ import EditIcon from "@material-ui/icons/Edit";
 import Favorite from "@material-ui/icons/Favorite";
 import FavoriteBorder from "@material-ui/icons/FavoriteBorder";
 
-export default function Wish({ content, done, id, deleteWish }) {
+export default function Wish({ content, done, id, toggleWish, deleteWish }) {
   return (
     <ListItem>
       <FormGroup>
@@ -21,6 +21,7 @@ export default function Wish({ content, done, id, deleteWish }) {
               icon={<FavoriteBorder />}
               checkedIcon={<Favorite />}
               checked={done}
+              onClick={() => toggleWish(id)}
             />
           }
         />
