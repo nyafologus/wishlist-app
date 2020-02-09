@@ -11,28 +11,28 @@ import uuid from "uuid/v4";
 export default function WishListApp() {
   const initialWishes = [
     {
-      id: 1,
+      id: uuid(),
       content: "Audio-Technica ATH-M50x Headphones",
       done: false,
       link:
         "https://www.audio-technica.com/cms/headphones/99aff89488ddd6b1/index.html"
     },
     {
-      id: 2,
+      id: uuid(),
       content: "Celeste Mountain on Steam",
       done: false,
       link: "https://store.steampowered.com/app/504230/Celeste/"
     },
 
     {
-      id: 3,
+      id: uuid(),
       content: "Dreamland Alaskan Husky Faux Fur Heated Throw",
       done: false,
       link:
         "http://www.dreamlandworld.com/products/relaxwell-faux-fur-heated-throw/"
     },
     {
-      id: 4,
+      id: uuid(),
       content: "House of Leaves",
       done: true,
       link:
