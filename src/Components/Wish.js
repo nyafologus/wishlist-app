@@ -1,4 +1,5 @@
 import React from "react";
+import useToggleState from "../hooks/useToggleState";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
 import Checkbox from "@material-ui/core/Checkbox";
@@ -12,6 +13,8 @@ import Favorite from "@material-ui/icons/Favorite";
 import FavoriteBorder from "@material-ui/icons/FavoriteBorder";
 
 export default function Wish({ content, done, id, toggleWish, deleteWish }) {
+  const [isEditing, toggle] = useToggleState(false);
+
   return (
     <ListItem>
       <FormGroup>
