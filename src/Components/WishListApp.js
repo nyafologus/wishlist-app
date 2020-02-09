@@ -52,6 +52,10 @@ export default function WishListApp() {
     ]);
   };
 
+  const deleteWish = wishId => {
+    setWishes(wishes.filter(wish => wish.id !== wishId));
+  };
+
   return (
     <Paper
       style={{
@@ -73,7 +77,7 @@ export default function WishListApp() {
       <Grid container justify="center" style={{ marginTop: "1rem" }}>
         <Grid item xs={11} md={9} lg={5}>
           <WishForm addWish={addWish} />
-          <WishList wishes={wishes} />
+          <WishList wishes={wishes} deleteWish={deleteWish} />
         </Grid>
       </Grid>
     </Paper>
