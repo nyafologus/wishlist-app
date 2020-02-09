@@ -13,7 +13,7 @@ import Favorite from "@material-ui/icons/Favorite";
 import FavoriteBorder from "@material-ui/icons/FavoriteBorder";
 
 export default function Wish({ content, done, id, toggleWish, deleteWish }) {
-  const [isEditing, toggleIsEditing] = useToggleState(true);
+  const [isEditing, toggleIsEditing] = useToggleState(false);
 
   return (
     <ListItem>
@@ -37,7 +37,7 @@ export default function Wish({ content, done, id, toggleWish, deleteWish }) {
             {content}
           </ListItemText>
           <ListItemSecondaryAction>
-            <IconButton aria-label="edit">
+            <IconButton aria-label="edit" onClick={() => toggleIsEditing()}>
               <EditIcon />
             </IconButton>
             <IconButton aria-label="delete" onClick={() => deleteWish(id)}>
