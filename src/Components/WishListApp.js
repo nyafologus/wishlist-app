@@ -65,6 +65,14 @@ export default function WishListApp() {
     );
   };
 
+  const editWish = (wishId, newWishText) => {
+    setWishes(
+      wishes.map(wish =>
+        wish.id === wishId ? { ...wish, content: newWishText } : wish
+      )
+    );
+  };
+
   return (
     <Paper
       style={{
@@ -90,6 +98,7 @@ export default function WishListApp() {
             wishes={wishes}
             toggleWish={toggleWish}
             deleteWish={deleteWish}
+            editWish={editWish}
           />
         </Grid>
       </Grid>
