@@ -7,6 +7,7 @@ import FormControlLabel from "@material-ui/core/FormControlLabel";
 import IconButton from "@material-ui/core/IconButton";
 import ListItemSecondaryAction from "@material-ui/core/ListItemSecondaryAction";
 import DeleteIcon from "@material-ui/icons/Delete";
+import EditIcon from "@material-ui/icons/Edit";
 import Favorite from "@material-ui/icons/Favorite";
 import FavoriteBorder from "@material-ui/icons/FavoriteBorder";
 
@@ -26,6 +27,9 @@ export default function Wish({ content, done }) {
       </FormGroup>
       <ListItemText>{content}</ListItemText>
       <ListItemSecondaryAction>
+        <IconButton>
+          <EditIcon />
+        </IconButton>
         <IconButton>
           <DeleteIcon />
         </IconButton>
