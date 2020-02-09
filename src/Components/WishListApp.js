@@ -6,6 +6,7 @@ import Paper from "@material-ui/core/Paper";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
+import uuid from "uuid/v4";
 
 export default function WishListApp() {
   const initialWishes = [
@@ -44,7 +45,7 @@ export default function WishListApp() {
     setWishes([
       ...wishes,
       {
-        id: 5,
+        id: uuid(),
         content: newWishText,
         done: false,
         link: ""
