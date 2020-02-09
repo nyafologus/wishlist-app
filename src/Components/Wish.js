@@ -1,4 +1,5 @@
 import React from "react";
+import EditWishForm from "./EditWishForm";
 import useToggleState from "../hooks/useToggleState";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
@@ -18,7 +19,7 @@ export default function Wish({ content, done, id, toggleWish, deleteWish }) {
   return (
     <ListItem>
       {isEditing ? (
-        <h1>Editing!</h1>
+        <EditWishForm />
       ) : (
         <>
           <FormGroup>
