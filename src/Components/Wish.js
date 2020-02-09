@@ -25,7 +25,9 @@ export default function Wish({ content, done }) {
           }
         />
       </FormGroup>
-      <ListItemText>{content}</ListItemText>
+      <ListItemText style={{ textDecoration: done && "line-through" }}>
+        {content}
+      </ListItemText>
       <ListItemSecondaryAction>
         <IconButton aria-label="edit">
           <EditIcon />
