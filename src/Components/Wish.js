@@ -13,33 +13,39 @@ import Favorite from "@material-ui/icons/Favorite";
 import FavoriteBorder from "@material-ui/icons/FavoriteBorder";
 
 export default function Wish({ content, done, id, toggleWish, deleteWish }) {
-  const [isEditing, toggle] = useToggleState(false);
+  const [isEditing, toggleIsEditing] = useToggleState(true);
 
   return (
     <ListItem>
-      <FormGroup>
-        <FormControlLabel
-          control={
-            <Checkbox
-              icon={<FavoriteBorder />}
-              checkedIcon={<Favorite />}
-              checked={done}
-              onClick={() => toggleWish(id)}
+      {isEditing ? (
+        <h1>Editing!</h1>
+      ) : (
+        <>
+          <FormGroup>
+            <FormControlLabel
+              control={
+                <Checkbox
+                  icon={<FavoriteBorder />}
+                  checkedIcon={<Favorite />}
+                  checked={done}
+                  onClick={() => toggleWish(id)}
+                />
+              }
             />
-          }
-        />
-      </FormGroup>
-      <ListItemText style={{ textDecoration: done && "line-through" }}>
-        {content}
-      </ListItemText>
-      <ListItemSecondaryAction>
-        <IconButton aria-label="edit">
-          <EditIcon />
-        </IconButton>
-        <IconButton aria-label="delete" onClick={() => deleteWish(id)}>
-          <DeleteIcon />
-        </IconButton>
-      </ListItemSecondaryAction>
+          </FormGroup>
+          <ListItemText style={{ textDecoration: done && "line-through" }}>
+            {content}
+          </ListItemText>
+          <ListItemSecondaryAction>
+            <IconButton aria-label="edit">
+              <EditIcon />
+            </IconButton>
+            <IconButton aria-label="delete" onClick={() => deleteWish(id)}>
+              <DeleteIcon />
+            </IconButton>
+          </ListItemSecondaryAction>
+        </>
+      )}
     </ListItem>
   );
 }
