@@ -18,7 +18,7 @@ export default function WishListApp() {
     },
     {
       id: 2,
-      content: "Celseste Mountain on Steam",
+      content: "Celeste Mountain on Steam",
       done: false,
       link: "https://store.steampowered.com/app/504230/Celeste/"
     },
