@@ -25,6 +25,7 @@ export default function EditWishForm({
         onChange={handleChange}
         margin="normal"
         fullWidth
+        autoFocus
       />
     </form>
   );
