@@ -18,6 +18,7 @@ export default function EditWishForm({
         reset();
         toggleIsEditing();
       }}
+      style={{ marginLeft: "3rem", width: "80%" }}
     >
       <TextField
         value={value}
