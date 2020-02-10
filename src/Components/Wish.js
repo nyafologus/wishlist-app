@@ -24,7 +24,7 @@ export default function Wish({
   const [isEditing, toggleIsEditing] = useToggleState(false);
 
   return (
-    <ListItem>
+    <ListItem style={{ height: "64px" }}>
       {isEditing ? (
         <EditWishForm
           content={content}
