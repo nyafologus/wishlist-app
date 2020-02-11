@@ -9,7 +9,7 @@ export default function WishList({ wishes, toggleWish, deleteWish, editWish }) {
     <Paper>
       <List>
         {wishes.map((wish, index) => (
-          <>
+          <div key={wish.id}>
             <Wish
               id={wish.id}
               content={wish.content}
@@ -21,7 +21,7 @@ export default function WishList({ wishes, toggleWish, deleteWish, editWish }) {
             {/* only render a Divider if the index of
             this individual wish is not the last one */}
             {index < wishes.length - 1 && <Divider />}
-          </>
+          </div>
         ))}
       </List>
     </Paper>
