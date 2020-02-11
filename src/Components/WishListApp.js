@@ -9,7 +9,7 @@ import Grid from "@material-ui/core/Grid";
 import uuid from "uuid/v4";
 
 export default function WishListApp() {
-  const initialWishes = [
+  const initialWishesArray = [
     {
       id: uuid(),
       content: "Audio-Technica ATH-M50x Headphones",
@@ -39,6 +39,16 @@ export default function WishListApp() {
         "https://www.barnesandnoble.com/w/house-of-leaves-mark-z-danielewski/1103027816#/"
     }
   ];
+
+  const wishesLength = JSON.parse(localStorage.getItem("wishes")).length;
+
+  const initialWishes =
+    wishesLength > 0
+      ? // if there are any wishes, render them
+        JSON.parse(window.localStorage.getItem("wishes"))
+      : // otherwise, in case the user deleted all, reload hardcoded wishes from
+        // initialWishesArray upon refresh so it won't start as empty
+        initialWishesArray;
 
   const [wishes, setWishes] = useState(initialWishes);
 
