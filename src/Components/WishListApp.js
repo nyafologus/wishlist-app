@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import WishForm from "./WishForm";
 import WishList from "./WishList";
 import AppBar from "@material-ui/core/AppBar";
@@ -41,6 +41,15 @@ export default function WishListApp() {
   ];
 
   const [wishes, setWishes] = useState(initialWishes);
+
+  useEffect(() => {
+    // sync wishes to localStorage by saving them under the key of "wishes"
+    // since wishes are objects, and localStorage needs a string,
+    // we need to explicitly convert them into strings, in order to avoid
+    // the JS Engline implicitly calling .toString() on the objects
+    window.localStorage.setItem("wishes", JSON.stringify(wishes));
+  }, [wishes]);
+
   const addWish = newWishText => {
     setWishes([
       ...wishes,
