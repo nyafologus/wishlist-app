@@ -11,9 +11,7 @@ export default function WishList({ wishes, toggleWish, deleteWish, editWish }) {
         {wishes.map((wish, index) => (
           <div key={wish.id}>
             <Wish
-              id={wish.id}
-              content={wish.content}
-              done={wish.done}
+              {...wish}
               toggleWish={toggleWish}
               deleteWish={deleteWish}
               editWish={editWish}
