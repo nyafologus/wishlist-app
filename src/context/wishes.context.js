@@ -4,4 +4,4 @@ const defaultWishes = [
   //
 ];
 
-export const WishesContext = crateContext();
+export const WishesContext = createContext();
