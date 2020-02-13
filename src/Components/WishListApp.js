@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import WishForm from "./WishForm";
 import WishList from "./WishList";
+import useWishesState from "../hooks/useWishesState";
 import AppBar from "@material-ui/core/AppBar";
 import Paper from "@material-ui/core/Paper";
 import Toolbar from "@material-ui/core/Toolbar";
@@ -50,7 +51,9 @@ export default function WishListApp() {
         // initialWishesArray upon refresh so it won't start as empty
         initialWishesArray;
 
-  const [wishes, setWishes] = useState(initialWishes);
+  const { wishes, addWish, deleteWish, toggleWish, editWish } = useWishesState(
+    initialWishes
+  );
 
   useEffect(() => {
     // sync wishes to localStorage by saving them under the key of "wishes"
@@ -59,38 +62,6 @@ export default function WishListApp() {
     // the JS Engline implicitly calling .toString() on the objects
     window.localStorage.setItem("wishes", JSON.stringify(wishes));
   }, [wishes]);
-
-  const addWish = newWishText => {
-    setWishes([
-      ...wishes,
-      {
-        id: uuid(),
-        content: newWishText,
-        done: false,
-        link: ""
-      }
-    ]);
-  };
-
-  const deleteWish = wishId => {
-    setWishes(wishes.filter(wish => wish.id !== wishId));
-  };
-
-  const toggleWish = wishId => {
-    setWishes(
-      wishes.map(wish =>
-        wish.id === wishId ? { ...wish, done: !wish.done } : wish
-      )
-    );
-  };
-
-  const editWish = (wishId, newWishText) => {
-    setWishes(
-      wishes.map(wish =>
-        wish.id === wishId ? { ...wish, content: newWishText } : wish
-      )
-    );
-  };
 
   return (
     <Paper
