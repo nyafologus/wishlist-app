@@ -1,5 +1,6 @@
 import React, { createContext } from "react";
 import useWishesState from "../hooks/useWishesState";
+import uuid from "uuid/v4";
 
 const defaultWishes = [
   {
