@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import WishForm from "./WishForm";
 import WishList from "./WishList";
 import useWishesState from "../hooks/useWishesState";
+import { WishesProvider } from "../context/wishes.context";
 import AppBar from "@material-ui/core/AppBar";
 import Paper from "@material-ui/core/Paper";
 import Toolbar from "@material-ui/core/Toolbar";
@@ -83,13 +84,15 @@ export default function WishListApp() {
       </AppBar>
       <Grid container justify="center" style={{ marginTop: "1rem" }}>
         <Grid item xs={11} md={9} lg={5}>
-          <WishForm addWish={addWish} />
-          <WishList
-            wishes={wishes}
-            toggleWish={toggleWish}
-            deleteWish={deleteWish}
-            editWish={editWish}
-          />
+          <WishesProvider>
+            <WishForm addWish={addWish} />
+            <WishList
+              wishes={wishes}
+              toggleWish={toggleWish}
+              deleteWish={deleteWish}
+              editWish={editWish}
+            />
+          </WishesProvider>
         </Grid>
       </Grid>
     </Paper>
