@@ -1,4 +1,5 @@
 import React, { createContext } from "react";
+import useWishesState from "../hooks/useWishesState";
 
 const defaultWishes = [
   {
@@ -17,3 +18,18 @@ const defaultWishes = [
 ];
 
 export const WishesContext = createContext();
+// provider calls our custom hook to set up the initial wishes object
+export function WishesProvider(props) {
+  const { wishes, addWish, deleteWish, toggleWish, editWish } = useWishesState(
+    defaultWishes
+  );
+  return (
+    //   return a provider wrapper
+    <WishesContext.Provider
+      // pass the wishes object as a value so any children can consume it
+      value={(wishes, addWish, deleteWish, toggleWish, editWish)}
+    >
+      {props.children}
+    </WishesContext.Provider>
+  );
+}
